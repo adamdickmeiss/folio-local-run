@@ -7,6 +7,9 @@ and need to test integration with other modules.
 This probably only works on Ubuntu/Debian and likes with Postgresql 11
 available or later.
 
+At this point, the testing is performed without the remote registry.
+It's completely isolated test with everything from source.
+
 ## Preparations
 
 ### Postgesql
@@ -88,6 +91,21 @@ changes to be made later.
 Adjust `run.sh` with the system configuration for PostgresQL,
 Kafka, ElasticSearch and the modules you wish to run.
 
+There are two sets of modules that you specify in the script.
+
+The first set, `CORE_MODULES`, are modules that are installed
+without mod-authoken enabled.
+
+The second set, `TEST_MODULES`, are modules that are installed
+after mod-authtoken is enabled.
+
+You probably should never remove the 4 core modules, but you could
+add more modules (all!) to that list (make `TEST_MODULES` empty).
+
+It is important that the modules listed are same order as install
+(or simulate install) would have returned. Okapi will fail if
+dependences are not met - as expected.
+
 ## Running
 
 At this point, the scripts here do not start Okapi, you'll have do it
@@ -108,9 +126,12 @@ of `okapi-core`. In this case Okapi listens on port 9130 and uses ports range 91
     cd okapi
     java -Dport_end=9200 -jar okapi-core/target/okapi-core-fat.jar
 
-Leave Okapi running or put it in the bacground - or something, but you probably want to keep the log as you get log material from all modules (which is useful).
+Leave Okapi running or put it in the background - or something, but you
+probably want to keep the log as you get log material from all modules
+(which is useful).
 
-You are now ready to run `run.sh`. In many cases it takes less than a minute to start if all modules are cloned and compiled already. 
+You are now ready to run `run.sh`. In many cases it takes less than a minute
+to start if all modules are cloned and compiled already.
 
     folio-local-run/run.sh
 
@@ -135,10 +156,5 @@ Run run.sh to play with another set of modules and or different source for
 any of the modules involved. Remember that the fat jar must be updated for this
 to take an effect, so do not forget to run `mvn -DskipTests verify` or
 `mvn -DskipTests install` on the module where you changed something.
-
-
-
-
-
 
 
