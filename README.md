@@ -102,7 +102,7 @@ project). If there are modules missing, the folio-local-run script will
 clone it for you. That might be what you want. But most certianly not
 in all cases, as you are probably going to have a local build somewhere.
 
-Start okapi with current working directy in `okapi` - the parent directory
+Start Okapi with current working directy in `okapi` - the parent directory
 of `okapi-core`. In this case Okapi listens on port 9130 and uses ports range 9131 - 9200 for deployments:
 
     cd okapi
@@ -115,7 +115,7 @@ You are now ready to run `run.sh`. In many cases it takes less than a minute to 
     folio-local-run/run.sh
 
 Observe that we execute run.sh in `folio` or other parent directory
-that has okapi and all modules!
+that has Okapi and all modules!
 
 By default the `run.sh` will purge on init which makes it start from a
 clean slate. If you think something is wrong, just stop run.sh and Okapi.
@@ -129,7 +129,7 @@ to test an upgrade, you'll have to modify the run.sh script.
 If the install succeds and run.sh stops you can poke with your system.
 You could also extend the run.sh and test something in that script.
 
-To stop the system, just terminate okapi!
+To stop the system, just terminate Okapi!
 
 Run run.sh to play with another set of modules and or different source for
 any of the modules involved. Remember that the fat jar must be updated for this
