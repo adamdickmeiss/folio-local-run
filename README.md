@@ -45,7 +45,7 @@ No Debian package at this point AFAIK. You'll have to download yourself.
 In order to install as a service, it's good practice to make a dedicated
 user for that.
 
-Example with kafka installed in `home/kafka`, so that
+Example with kafka installed in `/home/kafka`, so that
 `/home/kafka/bin/` has the binaries. Two services should be installed:
 `zookeeper.service` and `kafka.service`.
 
