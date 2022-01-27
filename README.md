@@ -15,7 +15,7 @@ It's completely isolated test with everything from source.
 ### Postgesql
 
 The postgresql-13 Debian package is known to work.
-Prepare a database for okapi and modules. Could be separate databases,
+Prepare a database for Okapi and modules. Could be separate databases,
 could be one.
 
 ### ElasticSearch
@@ -115,7 +115,8 @@ It is important that Okapi has the correct path to modules. It is relying
 on the DeploymentDescriptor.json in target of each module to be correctly
 configured. In particular the path to the (fat) jar file must be correct.
 
-Use a directory structure with a common parent directory (I use `folio`) with okapi and all relevant modules checked out as well as folio-local-run (this
+Use a directory structure with a common parent directory (I use `folio`) with
+Okapi and all relevant modules checked out as well as folio-local-run (this
 project). If there are modules missing, the folio-local-run script will
 clone it for you. That might be what you want. But most certianly not
 in all cases, as you are probably going to have a local build somewhere.
