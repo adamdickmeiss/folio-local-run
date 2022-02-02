@@ -25,7 +25,7 @@ The Debian package from
 
 Install plugins before use. 
 
-    usr/share/elasticsearch/bin/elasticsearch-plugin install --batch \
+    /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch \
       analysis-icu \
       analysis-kuromoji \
       analysis-smartcn \
