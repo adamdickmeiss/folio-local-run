@@ -26,14 +26,13 @@ The Debian package from
 Install plugins before use. 
 
     /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch \
-      analysis-icu \
-      analysis-kuromoji \
-      analysis-smartcn \
-      analysis-nori \
-      analysis-phonetic
+      analysis-icu analysis-kuromoji analysis-smartcn analysis-nori analysis-phonetic
 
 Note that if the elasticsearch is upgraded, then the plugins may have to
-be re-installed.
+be upgraded by removal and install. Remove with:
+
+    /usr/share/elasticsearch/bin/elasticsearch-plugin remove \
+      analysis-icu analysis-kuromoji analysis-smartcn analysis-nori analysis-phonetic
 
 If you run ElasticSearch on port 9200, there's less configuration
 changes to be made later.
