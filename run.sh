@@ -2,15 +2,15 @@
 
 set -e
 U=http://localhost:9130
-T=testlib14
+T=testlib1
 username=testing_admin
 password=admin
 curl -d"{\"id\":\"$T\"}" $U/_/proxy/tenants
 curl -d'{"name":"DB_HOST","value":"localhost"}' $U/_/env
 curl -d'{"name":"DB_PORT","value":"5432"}' $U/_/env
-curl -d'{"name":"DB_USERNAME","value":"postgres"}' $U/_/env
-curl -d'{"name":"DB_PASSWORD","value":"postgres3636"}' $U/_/env
-curl -d'{"name":"DB_DATABASE","value":"postgres"}' $U/_/env
+curl -d'{"name":"DB_USERNAME","value":"folio"}' $U/_/env
+curl -d'{"name":"DB_PASSWORD","value":"folio"}' $U/_/env
+curl -d'{"name":"DB_DATABASE","value":"folio_modules"}' $U/_/env
 curl -d'{"name":"KAFKA_PORT","value":"9092"}' $U/_/env
 curl -d'{"name":"KAFKA_HOST","value":"localhost"}' $U/_/env
 curl -d"{\"name\":\"OKAPI_URL\",\"value\":\"$U\"}" $U/_/env

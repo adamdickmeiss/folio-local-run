@@ -12,11 +12,24 @@ It's completely isolated test with everything from source.
 
 ## Preparations
 
-### Postgesql
+### PostgreSQL
 
-The postgresql-13 Debian package is known to work.
-Prepare a database for Okapi and modules. Could be separate databases,
-could be one.
+The `postgresql-14` Debian package is known to work.
+
+Normally all FOLIO modules use distinct schemas in one database.
+
+Configure PostgreSQL for FOLIO modules:
+
+    sudo -u postgres psql
+
+    CREATE DATABASE folio_modules;
+    CREATE USER folio WITH CREATEROLE PASSWORD 'folio';
+    GRANT ALL PRIVILEGES ON DATABASE folio_modules TO folio;
+
+These are the values in the local run script.
+
+Note: it's not required for Okapi to use persistent storage (database)
+to run the script here.
 
 ### ElasticSearch
 
