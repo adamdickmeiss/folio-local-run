@@ -137,7 +137,7 @@ Start Okapi with current working directy in `okapi` - the parent directory
 of `okapi-core`. In this case Okapi listens on port 9130 and uses ports range 9131 - 9200 for deployments:
 
     cd okapi
-    java -Dport_end=9200 -jar okapi-core/target/okapi-core-fat.jar
+    java -Dport_end=9200 -jar okapi-core/target/okapi-core-fat.jar dev
 
 Leave Okapi running or put it in the background - or something, but you
 probably want to keep the log as you get log material from all modules
