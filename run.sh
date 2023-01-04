@@ -54,7 +54,6 @@ register_module() {
 		OPT=""
 	fi
 	curl -s $OPT -d@$md $U/_/proxy/modules -o /dev/null
-	local dd=$m/target/DeploymentDescriptor.json
 }
 
 deploy_module() {
